@@ -29,11 +29,11 @@ class MainActivity : BaseActivity() {
             startActivity(intent)
         }
 
-//        guestButton?.setOnClickListener {
-//            val intent = Intent(this, LoginActivity::class.java)
-//            startActivity(intent)
-//            finish()
-//        }
+        guestButton?.setOnClickListener {
+            val intent = Intent(this, HomeActivity::class.java)
+            startActivity(intent)
+            finish()
+        }
     }
 }
 

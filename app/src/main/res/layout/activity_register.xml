@@ -23,7 +23,7 @@
                 android:layout_width="match_parent"
                 android:scaleType="centerCrop"
                 android:layout_height="wrap_content"
-                android:contentDescription="coffeIntroPic"
+                android:contentDescription="@string/imgIntro"
                 android:src="@drawable/intro_pic" />
 
             <LinearLayout
@@ -41,7 +41,7 @@
                     android:ems="10"
                     android:inputType="textEmailAddress"
                     android:minHeight="48dp"
-                    android:text="Email"
+                    android:hint="@string/email"
                     android:textColor="#A9A9A9"
                     android:layout_marginBottom="10dp"/>
 
@@ -54,7 +54,7 @@
                     android:ems="10"
                     android:inputType="text"
                     android:minHeight="48dp"
-                    android:text="Username"
+                    android:hint="@string/username"
                     android:textColor="#A9A9A9"
                     android:layout_marginBottom="10dp"/>
 
@@ -67,7 +67,7 @@
                     android:ems="10"
                     android:inputType="textPassword"
                     android:minHeight="48dp"
-                    android:text="Password"
+                    android:hint="@string/password"
                     android:textColor="#A9A9A9"
                     android:layout_marginBottom="20dp"/>
 
@@ -81,7 +81,7 @@
                     android:backgroundTint="@color/white"
                     android:textColor="@color/black"
                     android:textStyle="bold"
-                    android:text="Register" />
+                    android:text="@string/registerButton" />
             </LinearLayout>
         </LinearLayout>
     </ScrollView>

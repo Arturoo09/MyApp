@@ -1,3 +1,12 @@
 <resources>
     <string name="app_name">MyApp</string>
+    <string name="introText">Welcome to MyApp</string>
+    <string name="imgIntro">coffeeIntroPic</string>
+    <string name="username">Username</string>
+    <string name="email">email@gmail.com</string>
+    <string name="password">1234</string>
+    <string name="loginButton">LogIn</string>
+    <string name="registerButton">Register</string>
+    <string name="guestButton">Guest</string>
+    <string name="search_text">Search…</string>
 </resources>

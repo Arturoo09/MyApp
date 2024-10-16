@@ -23,7 +23,7 @@
                 android:layout_width="match_parent"
                 android:scaleType="centerCrop"
                 android:layout_height="wrap_content"
-                android:contentDescription="coffeIntroPic"
+                android:contentDescription="@string/imgIntro"
                 android:src="@drawable/intro_pic" />
 
             <LinearLayout
@@ -37,13 +37,13 @@
                     android:layout_width="254dp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
+                    android:layout_marginBottom="10dp"
                     android:autofillHints="username"
                     android:ems="10"
+                    android:hint="@string/username"
                     android:inputType="text"
                     android:minHeight="48dp"
-                    android:text="Username"
-                    android:textColor="#A9A9A9"
-                    android:layout_marginBottom="10dp"/>
+                    android:textColor="#A9A9A9" />
 
                 <EditText
                     android:id="@+id/txtPassword"
@@ -54,7 +54,7 @@
                     android:ems="10"
                     android:inputType="textPassword"
                     android:minHeight="48dp"
-                    android:text="Password"
+                    android:hint="@string/password"
                     android:textColor="#A9A9A9"
                     android:layout_marginBottom="20dp"/>
 
@@ -68,7 +68,7 @@
                     android:backgroundTint="@color/white"
                     android:textColor="@color/black"
                     android:textStyle="bold"
-                    android:text="LogIn" />
+                    android:text="@string/loginButton" />
             </LinearLayout>
         </LinearLayout>
     </ScrollView>
