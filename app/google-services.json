@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "400906386192",
+    "firebase_url": "https://myapp-ca79f-default-rtdb.europe-west1.firebasedatabase.app",
+    "project_id": "myapp-ca79f",
+    "storage_bucket": "myapp-ca79f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:400906386192:android:677411ae449ca581804395",
+        "android_client_info": {
+          "package_name": "edu.ucam.myapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDiHzfrpupd3DJKa6488XuccIB1NyWFBuY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
