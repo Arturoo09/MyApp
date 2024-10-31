@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:background="@color/black"
     tools:ignore="LabelFor"
-    tools:context=".LoginActivity">
+    tools:context=".Activity.LoginActivity">
 
     <ScrollView
         android:layout_width="match_parent"

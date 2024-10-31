@@ -9,4 +9,8 @@
     <string name="registerButton">Register</string>
     <string name="guestButton">Guest</string>
     <string name="search_text">Search…</string>
+    <string name="txtTitle">Good Morning…</string>
+    <string name="txtPopular">Popular</string>
+    <string name="txtSeeAll">See all\n</string>
+    <string name="txtOffers">Offers</string>
 </resources>

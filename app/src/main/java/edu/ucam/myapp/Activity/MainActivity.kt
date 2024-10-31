@@ -1,8 +1,9 @@
-package edu.ucam.myapp
+package edu.ucam.myapp.Activity
 
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
+import edu.ucam.myapp.R
 
 
 class MainActivity : BaseActivity() {

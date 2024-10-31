@@ -1,21 +1,22 @@
-package edu.ucam.myapp
+package edu.ucam.myapp.Activity
 
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
-import com.google.firebase.auth.FirebaseAuth
+import edu.ucam.myapp.Helper.FirebaseManager
+import edu.ucam.myapp.R
 
 class RegisterActivity : BaseActivity() {
 
-    private lateinit var auth: FirebaseAuth
+    private lateinit var firebaseManager: FirebaseManager
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_register)
 
-        auth = FirebaseAuth.getInstance()
+        firebaseManager = FirebaseManager()
 
         val registerButton: Button = findViewById(R.id.btnRegister)
         val usernameField: EditText = findViewById(R.id.txtUsername)
@@ -36,20 +37,15 @@ class RegisterActivity : BaseActivity() {
 
     }
 
-    private fun registerUser(email: String, password: String) {
-        auth.createUserWithEmailAndPassword(email, password)
-            .addOnCompleteListener(this) { task ->
-                if (task.isSuccessful) {
-                    // Registro exitoso
-                    val user = auth.currentUser
-                    Toast.makeText(baseContext, "Registro exitoso", Toast.LENGTH_SHORT).show()
-                    val intent = Intent(this, HomeActivity::class.java)
-                    startActivity(intent)
-                } else {
-                    // Si falla el registro, muestra un mensaje
-                    Toast.makeText(baseContext, "Error al registrarse: ${task.exception?.message}", Toast.LENGTH_SHORT).show()
-                }
+    private fun registerUser(email: String, password: String){
+        firebaseManager.registerUser(email, password) { success, message ->
+            if (success) {
+                Toast.makeText(baseContext, "Registro Exitoso", Toast.LENGTH_SHORT).show()
+                val intent = Intent(this, HomeActivity::class.java)
+                startActivity(intent)
+            } else {
+                Toast.makeText(baseContext, "Error al registrarse: $message", Toast.LENGTH_SHORT).show()
             }
+        }
     }
-
 }

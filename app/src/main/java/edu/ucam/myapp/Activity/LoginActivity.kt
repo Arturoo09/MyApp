@@ -1,21 +1,22 @@
-package edu.ucam.myapp
+package edu.ucam.myapp.Activity
 
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
-import com.google.firebase.auth.FirebaseAuth
+import edu.ucam.myapp.Helper.FirebaseManager
+import edu.ucam.myapp.R
 
 class LoginActivity : BaseActivity() {
 
-    private lateinit var auth: FirebaseAuth
+    private lateinit var firebaseManager: FirebaseManager
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
 
-        auth = FirebaseAuth.getInstance()
+        firebaseManager = FirebaseManager()
 
         /*
         * DEFAULT USER
@@ -40,16 +41,14 @@ class LoginActivity : BaseActivity() {
     }
 
     private fun signInUser(email: String, password: String) {
-        auth.signInWithEmailAndPassword(email, password)
-            .addOnCompleteListener(this) { task ->
-                if (task.isSuccessful) {
-                    val user = auth.currentUser
-                    Toast.makeText(baseContext, "Inicio de sesión exitoso", Toast.LENGTH_SHORT).show()
-                    val intent = Intent(this, HomeActivity::class.java)
-                    startActivity(intent)
-                } else {
-                    Toast.makeText(baseContext, "Error al iniciar sesión: ${task.exception?.message}", Toast.LENGTH_SHORT).show()
-                }
+        firebaseManager.signInUser(email, password) { success, message ->
+            if (success) {
+                Toast.makeText(baseContext, "Inicio de sesión exitoso", Toast.LENGTH_SHORT).show()
+                val intent = Intent(this, HomeActivity::class.java)
+                startActivity(intent)
+            } else {
+                Toast.makeText(baseContext, "Error al iniciar sesión: $message", Toast.LENGTH_SHORT).show()
             }
+        }
     }
 }
