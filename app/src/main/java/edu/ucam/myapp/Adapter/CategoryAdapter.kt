@@ -37,7 +37,7 @@ class CategoryAdapter(val items: MutableList<CategoryModel>) : RecyclerView.Adap
         if (selectedPosition == position) {
             holder.binding.titleCategory.setBackgroundColor(R.drawable.search_bg)
         } else {
-//            holder.binding.titleCategory.setBackgroundColor(R.drawable.search_bg)
+            holder.binding.titleCategory.setBackgroundColor(R.drawable.other_bg)
         }
 
     }

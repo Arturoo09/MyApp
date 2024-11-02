@@ -13,4 +13,6 @@
     <string name="txtPopular">Popular</string>
     <string name="txtSeeAll">See all\n</string>
     <string name="txtOffers">Offers</string>
+    <string name="user">User</string>
+    <string name="cart">Cart</string>
 </resources>
