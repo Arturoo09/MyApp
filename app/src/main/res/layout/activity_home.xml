@@ -89,29 +89,29 @@
                     android:layout_height="match_parent"
                     android:minHeight="100dp">
 
-                    <androidx.recyclerview.widget.RecyclerView
-                        android:id="@+id/recyclerViewCategory"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_marginTop="24dp"
-                        android:clipToPadding="false"
-                        android:paddingStart="8dp"
-                        android:paddingEnd="8dp"
-                        app:layout_constraintEnd_toEndOf="parent"
+                    <!-- Icono del café -->
+                    <ImageView
+                        android:id="@+id/coffeeIcon"
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:src="@drawable/coffee_bean"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        android:layout_marginStart="16dp"/>
 
-                    <ProgressBar
-                        android:id="@+id/progressBarCategory"
-                        style="?android:attr/progressBarStyle"
+                    <!-- Temperatura -->
+                    <TextView
+                        android:id="@+id/temperatureText"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:indeterminateTint="@color/orange"
-                        android:indeterminateTintMode="src_in"
+                        android:text="Temperatura: --°C"
+                        android:textSize="18sp"
+                        android:textColor="@color/white"
+                        app:layout_constraintStart_toEndOf="@id/coffeeIcon"
+                        app:layout_constraintTop_toTopOf="parent"
                         app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="@+id/recyclerViewCategory" />
+                        android:layout_marginStart="16dp" />
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
