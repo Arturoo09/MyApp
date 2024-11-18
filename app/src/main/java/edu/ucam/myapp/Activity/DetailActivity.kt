@@ -72,7 +72,7 @@ class DetailActivity : BaseActivity() {
             }
 
             backBtn.setOnClickListener{
-                startActivity(Intent(this@DetailActivity, MainActivity::class.java))
+                startActivity(Intent(this@DetailActivity, HomeActivity::class.java))
             }
 
             plusCart.setOnClickListener{

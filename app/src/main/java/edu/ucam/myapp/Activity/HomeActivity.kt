@@ -14,6 +14,7 @@ import edu.ucam.myapp.ViewModel.MainViewModel
 import edu.ucam.myapp.databinding.ActivityHomeBinding
 import android.hardware.SensorManager
 import android.content.Context
+import android.content.Intent
 import edu.ucam.myapp.R
 
 class HomeActivity : BaseActivity(), SensorEventListener {
@@ -36,7 +37,24 @@ class HomeActivity : BaseActivity(), SensorEventListener {
 
         initPopular()
         initOffer()
+        cartButton()
 
+        val userName = intent.getStringExtra("USER_NAME")
+        val userEmail = intent.getStringExtra("USER_EMAIL")
+
+        binding.userBtn.setOnClickListener {
+            val intent = Intent(this, ProfileActivity::class.java)
+            intent.putExtra("USER_NAME", userName)
+            intent.putExtra("USER_EMAIL", userEmail)
+            startActivity(intent)
+        }
+
+    }
+
+    private fun cartButton() {
+        binding.cartBtn.setOnClickListener {
+            startActivity(Intent(this, CartActivity::class.java))
+        }
     }
 
     private fun initOffer() {

@@ -41,13 +41,16 @@ class LoginActivity : BaseActivity() {
     }
 
     private fun signInUser(email: String, password: String) {
-        firebaseManager.signInUser(email, password) { success, message ->
+        firebaseManager.signInUser(email, password) { success, message, userEmail, userName ->
             if (success) {
-                Toast.makeText(baseContext, "Inicio de sesión exitoso", Toast.LENGTH_SHORT).show()
                 val intent = Intent(this, HomeActivity::class.java)
+                intent.putExtra("USER_NAME", userName)
+                intent.putExtra("USER_EMAIL", userEmail)
                 startActivity(intent)
+                finish()
             } else {
-                Toast.makeText(baseContext, "Error al iniciar sesión: $message", Toast.LENGTH_SHORT).show()
+                Toast.makeText(baseContext, "Error al iniciar sesión: $message", Toast.LENGTH_SHORT)
+                    .show()
             }
         }
     }

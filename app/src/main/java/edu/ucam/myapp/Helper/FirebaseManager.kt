@@ -17,24 +17,29 @@ class FirebaseManager {
         return auth.currentUser
     }
 
-    fun signInUser(email: String, password: String, callback: (Boolean, String?) -> Unit) {
+    fun signInUser(email: String, password: String, callback: (Boolean, String?, String?, String?) -> Unit) {
         auth.signInWithEmailAndPassword(email, password)
             .addOnCompleteListener { task ->
                 if (task.isSuccessful) {
-                    callback(true, null)
+                    val userEmail = auth.currentUser?.email
+                    val userName = auth.currentUser?.displayName
+                    callback(true, null, userEmail, userName)
                 } else {
-                    callback(false, task.exception?.message)
+                    callback(false, task.exception?.message, null, null)
                 }
             }
     }
 
-    fun registerUser(email: String, password: String, callback: (Boolean, String?) -> Unit) {
+    fun registerUser(name: String, email: String, password: String, callback: (Boolean, String?, String?, String?) -> Unit) {
         auth.createUserWithEmailAndPassword(email, password)
             .addOnCompleteListener { task ->
                 if (task.isSuccessful) {
-                    callback(true, null)
+                    val user = auth.currentUser
+                    val userEmail = user?.email
+                    val userName = name
+                    callback(true, null, userEmail, userName)
                 } else {
-                    callback(false, task.exception?.message)
+                    callback(false, task.exception?.message, null, null)
                 }
             }
     }

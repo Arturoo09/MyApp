@@ -1,10 +1,12 @@
 package edu.ucam.myapp.Adapter
 
 import android.content.Context
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import edu.ucam.myapp.Activity.DetailActivity
 import edu.ucam.myapp.Model.ItemsModel
 import edu.ucam.myapp.databinding.ViewholderPopularBinding
 
@@ -29,7 +31,11 @@ class PopularAdpater(val items: MutableList<ItemsModel>) : RecyclerView.Adapter<
             .load(items[position].picUrl[0])
             .into(holder.binding.pic)
 
-        holder.itemView.setOnClickListener {}
+        holder.itemView.setOnClickListener {
+            val intent = Intent(holder.itemView.context, DetailActivity::class.java)
+            intent.putExtra("object", items[position])
+            holder.itemView.context.startActivity(intent)
+        }
     }
 
     override fun getItemCount(): Int {
