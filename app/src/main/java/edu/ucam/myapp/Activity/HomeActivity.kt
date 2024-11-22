@@ -41,11 +41,15 @@ class HomeActivity : BaseActivity(), SensorEventListener {
 
         val userName = intent.getStringExtra("USER_NAME")
         val userEmail = intent.getStringExtra("USER_EMAIL")
+        val description = intent.getStringExtra("DESCRIPTION")
+        val profilePicUri = intent.getStringExtra("PROFILE_PIC_URI")
 
         binding.userBtn.setOnClickListener {
             val intent = Intent(this, ProfileActivity::class.java)
             intent.putExtra("USER_NAME", userName)
             intent.putExtra("USER_EMAIL", userEmail)
+            intent.putExtra("DESCRIPTION", description)
+            intent.putExtra("PROFILE_PIC_URI", profilePicUri)
             startActivity(intent)
         }
 
